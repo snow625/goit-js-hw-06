@@ -8,7 +8,11 @@ const destroyElBtn = document.querySelector('[data-destroy]');
 const boxesPlace = document.querySelector('#boxes');
 
 function createEl() {
+  if (inputOfnumber.value === '') {
+    return alert('Please insert correct nubmers of Boxers');
+  }
   createBoxes(inputOfnumber.value);
+
   destroyElBtn.addEventListener('click', () => {
     boxesPlace.innerHTML = '';
     inputOfnumber.value = '';
