@@ -10,9 +10,11 @@ function onSubmitForm(event) {
   } else if (inputPasswordPlase.value === '') {
     return alert('Dear User please insert your Password.)');
   }
-  console.log({
-    [inputEmailPlase.getAttribute('type')]: inputEmailPlase.value,
-    [inputPasswordPlase.getAttribute('type')]: inputPasswordPlase.value,
+
+  let formData = new FormData(submitForm);
+  formData.forEach((value, inputName) => {
+    console.log(`${inputName}: ${value}`);
   });
+
   submitForm.reset();
 }

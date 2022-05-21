@@ -1,11 +1,9 @@
-const numberOfCategories = document.querySelectorAll('#categories .item').length;
-console.log(`Number of categories: ${numberOfCategories}`);
+const categories = document.querySelector('#categories');
+const itemsOfCategories = [...categories.children];
+console.log(`Number of categories: ${itemsOfCategories.length}`);
 
-const numberOfElements = [...document.querySelectorAll('#categories  ul')].map(
-  el => el.children.length
-);
-const allTitleOfCategory = [...document.querySelectorAll('#categories h2')].map(el => el.innerText);
-
-const message = numberOfElements.map((el, i) =>
-  console.log(`Category: ${allTitleOfCategory[i]}\nElements: ${el}`)
-);
+itemsOfCategories.forEach(el => {
+  const titleText = el.querySelector('h2').textContent;
+  const numberOfItems = el.querySelectorAll('li').length;
+  console.log(`Category: ${titleText}\nElements: ${numberOfItems}`);
+});

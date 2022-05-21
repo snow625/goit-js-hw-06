@@ -14,7 +14,7 @@ const images = [
 ];
 
 const makeGalaryItem = ({ url, alt } = {}) =>
-  `<li class="item-task-3"><img src=${url} alt=${alt} width="320" height="200"></img></li>`;
+  `<li class="item-task-3"><img src=${url} alt="${alt}" width="320" height="200"></img></li>`;
 const arrOfEl = images.map(el => makeGalaryItem(el));
 
 const location = document.querySelector('.gallery');
