@@ -11,12 +11,10 @@ function onSubmitForm(event) {
     return alert('Dear User please insert your Password.)');
   }
 
-  console.log(
-    `${event.currentTarget.elements.email.name}: ${event.currentTarget.elements.email.value}`
-  );
-  console.log(
-    `${event.currentTarget.elements.password.name}: ${event.currentTarget.elements.password.value}`
-  );
+  console.log({
+    [event.currentTarget.elements.email.name]: event.currentTarget.elements.email.value,
+    [event.currentTarget.elements.password.name]: event.currentTarget.elements.password.value,
+  });
 
   // let formData = new FormData(submitForm);
   // formData.forEach((value, inputName) => {
